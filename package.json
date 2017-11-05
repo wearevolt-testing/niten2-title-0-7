@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
+    "typescript": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run compile\"",
+    "compile": "tsc --outDir ./build --module commonjs ./src/*.ts && node ./build/index.js",
+    "tests": "tsc && mocha dist/**/*.spec.js"
+  }
+}
